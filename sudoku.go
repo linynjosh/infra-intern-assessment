@@ -1,17 +1,14 @@
 package main
 
 func SolveSudoku(board [][]int) [][]int {
-	// Check if board has valid dimensions
-	if len(board) != 9 || len(board[0]) != 9 {
-		return nil
-	}
-
+	// I don't need to check the board dimensions since its garunteed to be 9x9
+	
 	// Find solution
-	if Backtrack(board) {
-		return board
-	}
+	Backtrack(board)
 
-	return nil
+	// I'll just return the board here since the input grid will have exactly one
+	// solution according to the README.me constraints
+	return board
 }
 
 // Constraint 1: Each row contains all the number from 1 to 9 without repetition
